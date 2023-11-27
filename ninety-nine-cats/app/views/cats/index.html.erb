@@ -1,0 +1,9 @@
+<h1>Cat's Index</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+      <li>
+          <%= render 'cat', cat: @cat, action: :from_index_page %>
+      </li>
+  <% end %>
+</ul>
