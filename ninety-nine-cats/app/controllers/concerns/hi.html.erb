@@ -1,0 +1,28 @@
+<h1>New Cat</h1>
+
+<%= form_with(model: @cat, local: true) do |form| %>
+
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :sex %>
+    <%= form.radio_button :sex, 'M' %> Male
+    <%= form.radio_button :sex, 'F' %> Female
+  </div>
+
+
+
+  <form action="<%= action %>" method="post">
+  <input type="hidden" name="_method" value="<%= method %>">
+
+  <label for="name">Name</label>
+  <input id="name" type="text" name="cat[name]" value = "<%= cat[:name] %>">
+  
+  <br>
+
+  <label for="gender"></label>
+  <input type="radio" name="cat[sex]" id="gender" value="M" <%= cat[:sex] == "M" ? "checked" : "" %>>Male 
+  <input type="radio" name="cat[sex]" id="gender" value="F" <%= cat[:sex] == "F" ? "checked" : "" %>>Female
